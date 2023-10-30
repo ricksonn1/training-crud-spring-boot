@@ -16,7 +16,8 @@ import lombok.Setter;
 @Entity(name = "departament")
 public class Departament {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private Long functionarys;
@@ -59,5 +60,17 @@ public class Departament {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void updateDepartament(DepartamentDTO data) {
+        if (data.name() != null) {
+            this.name = data.name();
+        }
+        if (data.functionarys() != null) {
+            this.functionarys = data.functionarys();
+        }
+        if (data.description() != null) {
+            this.description = data.description();
+        }
     }
 }

@@ -33,4 +33,21 @@ public class DepartamentController {
         return ResponseEntity.ok(departaments);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity getllDepartamentsById(@PathVariable Long id) {
+
+        var departamentById = repository.findById(id);
+        return ResponseEntity.ok(departamentById);
+    }
+
+    @PutMapping
+    @Transactional
+    public ResponseEntity updateDepartaments(@RequestBody @Valid DepartamentDTO data) {
+
+        var upDepartament = repository.getReferenceById(data.id());
+        upDepartament.updateDepartament(data);
+
+        return ResponseEntity.ok().build();
+
+    }
 }
