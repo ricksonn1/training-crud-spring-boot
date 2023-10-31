@@ -62,15 +62,15 @@ public class Departament {
         this.description = description;
     }
 
-    public void updateDepartament(DepartamentDTO data) {
-        if (data.name() != null) {
-            this.name = data.name();
-        }
-        if (data.functionarys() != null) {
-            this.functionarys = data.functionarys();
-        }
-        if (data.description() != null) {
-            this.description = data.description();
-        }
-    }
+//    public void updateDepartament(DepartamentDTO data) {
+//        if (data.name() != null) {
+//            this.name = data.name();
+//        }
+//        if (data.functionarys() != null) {
+//            this.functionarys = data.functionarys();
+//        }
+//        if (data.description() != null) {
+//            this.description = data.description();
+//        }
+//    }
 }
